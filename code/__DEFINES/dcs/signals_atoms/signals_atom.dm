@@ -8,3 +8,6 @@
 #define COMSIG_ATOM_EXAMINE_TAGS "atom_examine_tags"
 ///from base of atom/examine_more(): (/mob, examine_list)
 #define COMSIG_ATOM_EXAMINE_MORE "atom_examine_more"
+/// From /atom/proc/set_density(new_value) for when an atom changes density
+#define COMSIG_ATOM_DENSITY_CHANGED "atom_density_change"
+

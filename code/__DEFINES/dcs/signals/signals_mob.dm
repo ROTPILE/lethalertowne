@@ -33,3 +33,17 @@
 /// Called from the base of '/obj/item/bodypart/proc/drop_limb(special)' ()
 #define COMSIG_MOB_DISMEMBER "mob_drop_limb"
 	#define COMPONENT_CANCEL_DISMEMBER (1<<0) //cancel the drop limb
+
+/// from base of mob/living/updatestamina()
+#define COMSIG_LIVING_STAMINA_UPDATE "living_stamina_update"
+
+/// Sent from /mob/living/basic/proc/look_dead() : ()
+#define COMSIG_BASICMOB_LOOK_DEAD "basicmob_look_dead"
+/// Sent from /mob/living/basic/proc/look_alive() : ()
+#define COMSIG_BASICMOB_LOOK_ALIVE "basicmob_look_alive"
+//from base of atom/attack_basic_mob(): (/mob/user)
+#define COMSIG_ATOM_ATTACK_BASIC_MOB "attack_basic_mob"
+	#define COMSIG_BASIC_ATTACK_CANCEL_CHAIN (1<<0)
+
+/// From base of /mob/proc/update_held_items
+#define COMSIG_MOB_UPDATE_HELD_ITEMS "mob_update_held_items"

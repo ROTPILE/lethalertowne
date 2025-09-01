@@ -1,4 +1,17 @@
 /mob/living
+
+	/// Generic bitflags for boolean conditions at the [/mob/living] level. Keep this for inherent traits of living types, instead of runtime-changeable ones.
+	var/living_flags = NONE
+
+	//vars that used to be attached to sexcon.dm
+	var/can_do_sex = TRUE
+	var/virginity = FALSE	//what the fuck
+
+	//vars that used to be attached to prosthetic legs
+	var/tempatarget = null
+	var/pegleg = 0			//Handles check & slowdown for peglegs. Fuckin' bootleg, literally, but hey it at least works.
+	var/construct = 0
+
 	//used by the basic ai controller /datum/ai_behavior/basic_melee_attack to determine how fast a mob can attack
 	var/melee_cooldown = CLICK_CD_MELEE
 
@@ -1610,6 +1623,12 @@
 
 /mob/living/can_be_pulled()
 	return ..() && !(buckled && buckled.buckle_prevents_pull)
+
+/mob/living/proc/update_density()
+	if(HAS_TRAIT(src, TRAIT_UNDENSE))
+		set_density(FALSE)
+	else
+		set_density(TRUE)
 
 //Updates canmove, lying and icons. Could perhaps do with a rename but I can't think of anything to describe it.
 //Robots, animals and brains have their own version so don't worry about them

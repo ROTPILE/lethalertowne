@@ -538,6 +538,16 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_LEGENDARY_ALCHEMIST		"Expert Herb Finder"
 #define TRAIT_STUCKITEMS "stuck_items" // Prevents removing items except for hand slots
 
+/*
+*	basic mob traits
+*/
+
+/// Apply this to make a mob not dense, and remove it when you want it to no longer make them undense, other sources of undesity will still apply.\
+Always define a unique source when adding a new instance of this!
+#define TRAIT_UNDENSE "undense"
+/// Trait given by simple/basic mob death
+#define BASIC_MOB_DEATH_TRAIT "basic_mob_death"
+
 //bodypart traits
 #define TRAIT_PARALYSIS	"paralysis" //Used for limb-based paralysis and full body paralysis
 #define TRAIT_BRITTLE "brittle" //The limb is more susceptible to fractures

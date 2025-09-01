@@ -87,11 +87,6 @@
 		worn_thing.hit_response(src, user) //checks if clothing has hit response. Refer to Items.dm
 	return I.attack(src, user)
 
-/mob/living
-	var/tempatarget = null
-	var/pegleg = 0			//Handles check & slowdown for peglegs. Fuckin' bootleg, literally, but hey it at least works.
-	var/construct = 0
-
 /obj/item/proc/attack(mob/living/M, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
 		return FALSE

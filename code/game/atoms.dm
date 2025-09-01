@@ -242,6 +242,15 @@
 		return TRUE
 	return !density
 
+///Setter for the `density` variable to append behavior related to its changing.
+/atom/proc/set_density(new_value)
+	SHOULD_CALL_PARENT(TRUE)
+	if(density == new_value)
+		return
+	. = density
+	density = new_value
+	SEND_SIGNAL(src, COMSIG_ATOM_DENSITY_CHANGED)
+
 /**
  * Is this atom currently located on centcom
  *

@@ -34,10 +34,6 @@
 	volume = 20
 	extra_range = -4
 
-/mob/living
-	var/can_do_sex = TRUE
-	var/virginity = FALSE
-
 /mob/living/carbon/human/MiddleMouseDrop_T(mob/living/initiator, mob/living/user)
 	if(user.mmb_intent)
 		return ..()

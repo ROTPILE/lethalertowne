@@ -195,7 +195,10 @@
 
 #define RUNLEVELS_DEFAULT (RUNLEVEL_SETUP | RUNLEVEL_GAME | RUNLEVEL_POSTGAME)
 
-
+// Subsystem delta times or tickrates, in seconds. I.e, how many seconds in between each process() call for objects being processed by that subsystem.
+// Only use these defines if you want to access some other objects processing seconds_per_tick, otherwise use the seconds_per_tick that is sent as a parameter to process()
+#define SSMOBS_DT (SSmobs.wait/10)
+#define SSOBJ_DT (SSobj.wait/10)
 
 //! ## Overlays subsystem
 
